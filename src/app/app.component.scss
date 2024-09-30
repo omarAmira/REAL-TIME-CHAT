@@ -1,0 +1,29 @@
+/* Ajoutez ces styles dans le fichier CSS global ou local du composant */
+
+input {
+    padding: 8px;
+    margin-right: 8px;
+  }
+  
+  button {
+    background-color: #db5b34;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #30b929;
+  }
+  
+  /* Pour masquer le bouton lorsque shouldShowButton est faux */
+  button.hidden {
+    display: none;
+  }
+  element.style {
+    background-color: #bdeee4;
+}
+  

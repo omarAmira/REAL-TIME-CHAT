@@ -1,0 +1,28 @@
+<div class="chat_window">
+   
+  <div class="chat-container">
+    <h1>Messages</h1>
+  
+    <form class="chat-form" (ngSubmit)="loadMessagesByUsername()">
+      <label for="usernameInput">Entrez le nom d'utilisateur :</label>
+      <input class="chat-input" type="text" id="usernameInput" [(ngModel)]="usernameInput" name="usernameInput">
+      <button class="chat-button" type="submit">UserName</button>
+    </form>
+  
+    <form class="chat-form" (ngSubmit)="loadMessagesByRoomDesc()">
+      <label for="roomDescInput">Entrez la description de la salle :</label>
+      <input class="chat-input" type="text" id="roomDescInput" [(ngModel)]="roomDescInput" name="roomDescInput">
+      <button class="chat-button" type="submit">roomId</button>
+    </form>
+  
+    <button class="chat-button" (click)="extractPdf()">Extraire PDF</button>
+
+    <ul class="chat-messages" *ngIf="messages.length > 0">
+      <li class="chat-message" *ngFor="let message of messages" [ngClass]="{'sender': message.user === username, 'receiver': message.user !== username}">
+        <strong>{{ message.user }}:</strong> {{ message.message }}
+      </li>
+    </ul>
+  
+    <p *ngIf="messages.length === 0 && (usernameInput || roomDescInput)">Aucun message trouvé</p>
+  </div>
+</div>
